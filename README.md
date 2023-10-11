@@ -1,1 +1,71 @@
 # My_Keyboard_Config_Kmonad_Dvorak
+
+(defcfg
+  ;; For Linux
+  input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
+  output (uinput-sink "My KMonad output"
+    ;; To understand the importance of the following line, see the section on
+    ;; Compose-key sequences at the near-bottom of this file.
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+
+  ;; For Windows
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; For MacOS
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  ;; Comment this if you want unhandled events not to be emitted
+  fallthrough true
+
+  ;; Set this to false to disable any command-execution in KMonad
+  allow-cmd true
+)
+
+
+;; note : - check what you want to map in dvorak, and then use the character that is in location of that dvorak key (exact location, not the character) in QWERTY
+
+
+(defalias
+  mynum (layer-toggle numbers)
+  mysyb (layer-toggle symbols)
+  back (around lalt left)
+  wl (around (around lalt lctl) left)
+  wr (around (around lalt lctl) right)
+  clsft (tap-hold-next 200 esc lsft)
+  cb (around lctl bspc)
+)
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up       
+  lctl lmet lalt           spc            ralt rmet cmp  rctl            left down rght
+)
+(deflayer mine
+  esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
+  grv    1    2    3    4    5    6    7    8    9    0    -    =  bspc  ins  home pgup
+  tab    q    w    e    r    t    y    u    i    o    p    [    ]    del     del  end  pgdn
+  @back  a    s    d    f    g    h    j    k    l    ;    '    ret
+  @clsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
+  lctl   lalt @mynum         spc            @mysyb rmet cmp lmet            left down rght
+)
+(deflayer symbols 
+  _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    _    _    _     _    _    _    _     _    _    _
+  _    !    @    S-3  $    %    _    _    up   _     _    _    _    _     _    _    _
+  _    ^    '    S-]  ]    |    _    left down right _    _    _
+  _    S-[  [    S-8  &    \    _    _    _    _     _    _                    _
+  _    _    _              _              _    _     _    _               _    _    _
+)
+(deflayer numbers 
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
+  _    S-q  _    _    S-9  _    _    S-0  7    8    9    0    _    _     _    _    _
+  _    C-;  C-i  C-b  S--  _    _    S-=  4    5    6    _    _
+  _    C-/  C-t  C-.  -    _    _    =    1    2    3    _                    _ 
+  _    _    _              spc            _    _    _    _               _    _    _)
