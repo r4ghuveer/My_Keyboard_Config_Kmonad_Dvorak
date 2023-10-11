@@ -1,4 +1,8 @@
-# My_Keyboard_Config_Kmonad_Dvorak
+# My Keyboard Config (Dvorak)
+
+![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/e559aced-2237-47db-9e6b-0c51c981326a)
+
+
 ```
 (defcfg
   ;; For Linux
