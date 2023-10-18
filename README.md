@@ -1,6 +1,6 @@
 # My Keyboard Config (Dvorak)
 
-![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/e559aced-2237-47db-9e6b-0c51c981326a)
+![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/2ff52320-682e-497e-b7f3-6f1dfe1d30b7)
 
 
 ```
@@ -36,42 +36,65 @@
 
 (defalias
   mynum (layer-toggle numbers)
-  mysyb (layer-toggle symbols)
   back (around lalt left)
   wl (around (around lalt lctl) left)
   wr (around (around lalt lctl) right)
-  clsft (tap-hold-next 200 esc lsft)
+
+  
+  ;; modding space
+  mysyb (layer-toggle symbols)
+  mc1 #(bspc @mysyb)
+  sd (around bspc @mysyb)
+  mysy (tap-hold-next-release 300 pause @mc1)
+  cspc (around spc @mysy)
   cb (around lctl bspc)
+  
+  myarrows (layer-toggle arrows)
+  mc2 #(bspc @myarrows)
+  myarr (tap-hold-next-release 200 pause @mc2)
+  cd (around d @myarr)
 )
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  pause  home pgup
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up       
   lctl lmet lalt           spc            ralt rmet cmp  rctl            left down rght
 )
+
 (deflayer mine
-  esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
-  grv    1    2    3    4    5    6    7    8    9    0    -    =  bspc  ins  home pgup
-  tab    q    w    e    r    t    y    u    i    o    p    [    ]    del     del  end  pgdn
-  @back  a    s    d    f    g    h    j    k    l    ;    '    ret
-  @clsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lctl   lalt @mynum         spc            @mysyb rmet cmp lmet            left down rght
+ esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
+  grv    _    _    S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
+  tab    q    w    e    r    t    y    u    i    o    p    esc  ]    del     del  end  pgdn
+  @back  a    s    @cd  f    g    h    j    k    l    ;    '    ret
+  lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
+  lctl   lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    _    _    _     _    _    _    _     _    _    _
-  _    !    @    S-3  $    %    _    _    up   _     _    _    _    _     _    _    _
-  _    ^    '    S-]  ]    |    _    left down right _    _    _
-  _    S-[  [    S-8  &    \    _    _    _    _     _    _                    _
+  _    _    _    _    _    _    _    _    _    _     _    _    _    bspc  _    _    _
+  _    !    @    S-3  $    %    _    7    8    9     _    _    _    _     _    _    _
+  _    ^    '    S-]  ]    |    _    4    5    6     _    _    _
+  _    S-[  [    S-8  &    \    0    1    2    3     _    _                    _
   _    _    _              _              _    _     _    _               _    _    _
 )
+
 (deflayer numbers 
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
-  _    S-q  _    _    S-9  _    _    S-0  7    8    9    0    _    _     _    _    _
-  _    C-;  C-i  C-b  S--  _    _    S-=  4    5    6    _    _
-  _    C-/  C-t  C-.  -    _    _    =    1    2    3    _                    _ 
-  _    _    _              spc            _    _    _    _               _    _    _)
+  _    S-q  _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    C-;  C-i  C-b  C-.  _    _    _    _    _     _    _    _
+  _    C-/  C-t  _    _    _    _    _    _    _    _    _                    _ 
+  _    _    _              spc            _    _    _    _               _    _    _
+)
+(deflayer arrows
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    left down right _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _                    _
+  _    _    _              _              _    _    _    _               _    _    _
+)
+
 ```
