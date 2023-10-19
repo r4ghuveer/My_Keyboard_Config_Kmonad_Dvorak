@@ -1,6 +1,7 @@
 # My Keyboard Config (Dvorak)
 
-![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/2ff52320-682e-497e-b7f3-6f1dfe1d30b7)
+![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/56fca889-70b0-4888-b571-12accc05530d)
+
 
 
 ```
@@ -45,14 +46,11 @@
   mysyb (layer-toggle symbols)
   mc1 #(bspc @mysyb)
   sd (around bspc @mysyb)
-  mysy (tap-hold-next-release 300 pause @mc1)
+  mysy (tap-hold-next-release 350 pause @mc1)
   cspc (around spc @mysy)
   cb (around lctl bspc)
   
-  myarrows (layer-toggle arrows)
-  mc2 #(bspc @myarrows)
-  myarr (tap-hold-next-release 200 pause @mc2)
-  cd (around d @myarr)
+  arrows (layer-toggle arrows) 
 )
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -67,13 +65,13 @@
  esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
   grv    _    _    S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
   tab    q    w    e    r    t    y    u    i    o    p    esc  ]    del     del  end  pgdn
-  @back  a    s    @cd  f    g    h    j    k    l    ;    '    ret
+  @back  a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lctl   lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
+  lalt   @arrows lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    _    _    _     _    _    _    bspc  _    _    _
+  _    _    _    _    _    _    _    _    _    _     _    _    _    @cb   _    _    _
   _    !    @    S-3  $    %    _    7    8    9     _    _    _    _     _    _    _
   _    ^    '    S-]  ]    |    _    4    5    6     _    _    _
   _    S-[  [    S-8  &    \    0    1    2    3     _    _                    _
@@ -86,7 +84,7 @@
   _    S-q  _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
   _    C-;  C-i  C-b  C-.  _    _    _    _    _     _    _    _
   _    C-/  C-t  _    _    _    _    _    _    _    _    _                    _ 
-  _    _    _              spc            _    _    _    _               _    _    _
+  _    _    _              _              _    _    _    _               _    _    _
 )
 (deflayer arrows
   _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -96,5 +94,6 @@
   _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
+
 
 ```
