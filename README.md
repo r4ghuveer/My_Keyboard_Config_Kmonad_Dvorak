@@ -1,6 +1,7 @@
 # My Keyboard Config (Dvorak)
 
-![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/56fca889-70b0-4888-b571-12accc05530d)
+![image](https://github.com/r4ghuveer/My_Keyboard_Config_Kmonad_Dvorak/assets/101916585/a833ba3a-b9fb-4e52-9561-cadaf8d628e6)
+
 
 
 
@@ -50,7 +51,6 @@
   cspc (around spc @mysy)
   cb (around lctl bspc)
   
-  arrows (layer-toggle arrows) 
 )
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -67,7 +67,7 @@
   tab    q    w    e    r    t    y    u    i    o    p    esc  ]    del     del  end  pgdn
   @back  a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lalt   @arrows lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
+  lalt   lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
@@ -81,17 +81,9 @@
 (deflayer numbers 
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
-  _    S-q  _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    C-;  C-i  C-b  C-.  _    _    _    _    _     _    _    _
+  _    S-q  _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
+  _    C-;  C-i  C-b  C-.  _    _    left down right _    _    _
   _    C-/  C-t  _    _    _    _    _    _    _    _    _                    _ 
-  _    _    _              _              _    _    _    _               _    _    _
-)
-(deflayer arrows
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    left down right _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
 
