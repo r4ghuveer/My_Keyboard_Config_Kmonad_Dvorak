@@ -6,8 +6,6 @@
 
 
 ```
-
-
 (defcfg
   ;; For Linux
   input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
@@ -71,7 +69,7 @@
   tab    q    w    e    r    t    y    u    i    o    p    esc  ]    del     del  end  pgdn
   @back  a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lalt   lctl @mynum         @cspc          @arrow rmet cmp lmet            left down rght
+  lmet   lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
@@ -85,16 +83,16 @@
 (deflayer numbers 
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
-  _    S-q  _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    C-;  C-i  C-b  C-.  _    _    _    _    _    _    _    _
+  _    S-q  _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
+  _    C-;  C-i  C-b  C-.  _    _    left down right _    _    _
   _    C-/  C-t  _    _    _    _    _    _    _    _    _                    _ 
   _    _    _              _              _    _    _    _               _    _    _
 )
 (deflayer arrows
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    left down right _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
