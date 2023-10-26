@@ -1,8 +1,5 @@
 # My Keyboard Config (Dvorak)
 
-
-
-
 ```
 (defcfg
   ;; For Linux
