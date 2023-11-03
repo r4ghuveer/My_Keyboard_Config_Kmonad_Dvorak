@@ -2,7 +2,6 @@
 
 ```
 
-
 (defcfg
   ;; For Linux
   input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
