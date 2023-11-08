@@ -1,11 +1,11 @@
 # My Keyboard Config (Dvorak)
 
 ```
-
-
 (defcfg
   ;; For Linux
-  input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
+  ;; "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+  ;;"/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd"
+  input  (device-file  "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
   output (uinput-sink "My KMonad output"
     ;; To understand the importance of the following line, see the section on
     ;; Compose-key sequences at the near-bottom of this file.
@@ -37,19 +37,17 @@
   back (around lalt left)
   wl (around (around lalt lctl) left)
   wr (around (around lalt lctl) right)
-    
   
-  arrow (layer-toggle arrows)
+  ctl (tap-hold-next-release 200 pause lctl)
+  clctl (around esc @ctl) 
 
+  arr (layer-toggle arrow_mod)
   
-  ;; modding space
   mysyb (layer-toggle symbols)
-  mc1 #(bspc @mysyb)
-  sd (around bspc @mysyb)
-  mysy (tap-hold-next-release 350 pause @mc1)
-  cspc (around spc @mysy)
   cb (around lctl bspc)
-  
+  myspc (layer-toggle space_mod)
+  smod (tap-hold-next-release 360 pause @myspc)
+  cspc (around spc @smod)
 )
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -62,32 +60,40 @@
 
 (deflayer mine
  esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
-  grv    _    _    S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
-  tab    q    w    e    r    t    y    u    i    o    p    esc  ]    del     del  end  pgdn
-  @back  a    s    d    f    g    h    j    k    l    ;    '    ret
+  grv    _    @arr S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
+  tab    q    w    e    r    t    y    u    i    o    p    @mysyb esc del     del  end  pgdn
+  @back  a    s    d    f    g    h    j    k    l    ;    '      ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lmet   lalt @mynum         @cspc          lctl rmet cmp lmet            left down rght
+  lmet  lalt @mynum         @cspc           lctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    _    _    _    _     _    _    _    @cb   _    _    _
-  _    !    @    S-3  $    %    _    7    8    9     _    _    _    _     _    _    _
-  _    ^    '    S-]  ]    |    _    4    5    6     _    _    _
-  _    S-[  [    S-8  &    \    0    1    2    3     _    _                    _
+  _    _    _    _    _    _    _    _    _    _     _    _    _    _     _    _    _
+  _    !    @    S-3  $    %    _    _    _    _     _    _    _    _     _    _    _
+  _    ^    '    S-]  ]    |    _    _    _    _     _    _    _
+  _    S-[  [    S-8  &    \    _    _    _    _     _    _                    _
   _    _    _              _              _    _     _    _               _    _    _
 )
 
 (deflayer numbers 
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
-  _    S-q  _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
-  _    C-;  C-i  C-b  C-.  _    _    left down right _    _    _
-  _    C-/  C-t  _    _    _    _    _    _    _    _    _                    _ 
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    S-q  _    _    _    _    _    7    8    9    _    _    _    _     _    _    _
+  _    C-;  C-i  C-b  C-.  _    _    4    5    6     _    _    _
+  _    C-/  C-t  _    _    _    0    1    2    3    _    _                    _ 
   _    _    _              _              _    _    _    _               _    _    _
 )
-(deflayer arrows
+(deflayer arrow_mod
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    _    up   _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    left down right _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _                    _
+  _    _    _              _              _    _    _    _               _    _    _
+)
+(deflayer space_mod
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @cb   _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _                    _
