@@ -1,6 +1,7 @@
 # My Keyboard Config (Dvorak)
 
 ```
+
 (defcfg
   ;; For Linux
   ;; "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
@@ -33,6 +34,7 @@
 
 
 (defalias
+  pas #(@ l g m d ret)
   mynum (layer-toggle numbers)
   back (around lalt left)
   wl (around (around lalt lctl) left)
@@ -64,19 +66,19 @@
   tab    q    w    e    r    t    y    u    i    o    p    @mysyb esc del     del  end  pgdn
   @back  a    s    d    f    g    h    j    k    l    ;    '      ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lmet  lalt @mynum         @cspc           lctl rmet cmp lmet            left down rght
+  lmet  lalt @mynum         @cspc           rctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    _    _    _    _     _    _    _    _     _    _    _
-  _    !    @    S-3  $    %    _    _    _    _     _    _    _    _     _    _    _
-  _    ^    '    S-]  ]    |    _    _    _    _     _    _    _
-  _    S-[  [    S-8  &    \    _    _    _    _     _    _                    _
+  _    !    @    S-3  $    %    _    7    8    9     _    _    _    _     _    _    _
+  _    ^    '    S-]  ]    |    _    4    5    6     _    _    _
+  _    S-[  [    S-8  &    \    0    1    2    3     _    _                    _
   _    _    _              _              _    _     _    _               _    _    _
 )
 
 (deflayer numbers 
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @pas _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _
   _    S-q  _    _    _    _    _    7    8    9    _    _    _    _     _    _    _
   _    C-;  C-i  C-b  C-.  _    _    4    5    6     _    _    _
@@ -99,6 +101,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
+
 
 
 ```
