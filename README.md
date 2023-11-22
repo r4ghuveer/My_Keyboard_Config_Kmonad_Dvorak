@@ -1,7 +1,6 @@
 # My Keyboard Config (Dvorak)
 
 ``` 
-
 (defcfg
   ;; For Linux
   ;; "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
