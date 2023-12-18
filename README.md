@@ -61,11 +61,11 @@
 
 (deflayer mine
  esc    home end  @wl  @wr  f5   f6   f7   f8   f9   f10  f11  f12
-  grv    _    @arr S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
+  grv    lmet @arr S--  -    S-9  _    S-0  =    S-=  _    _    _   bspc  pause  home pgup
   tab    q    w    e    r    t    y    u    i    o    p    @mysyb esc del     del  end  pgdn
   @back  a    s    d    f    g    h    j    k    l    ;    '      ret
   lsft   z    x    c    v    b    n    m    ,    .    /    rsft                 up       
-  lmet  lalt @mynum         @cspc           rctl rmet cmp lmet            left down rght
+  _      lalt @mynum         @cspc           rctl rmet cmp lmet            left down rght
 )
 (deflayer symbols 
   _    _    _    _    _    _    _    _    _    _     _    _    _
@@ -100,7 +100,6 @@
   _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
-
 
 
 ```
