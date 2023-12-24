@@ -1,4 +1,4 @@
-# My Keyboard Config (Dvorak)
+# Keyboard Config (Dvorak)
 ```
 
 (defcfg
