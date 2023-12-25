@@ -1,6 +1,5 @@
 # Keyboard Config (Dvorak)
 ```
-
 (defcfg
   ;; For Linux
   ;; "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
@@ -13,7 +12,7 @@
   cmp-seq ralt    ;; Set the compose key to `RightAlt'
   cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
-  ;; For Windows
+  ;; For Windows : 
   ;; input  (low-level-hook)
   ;; output (send-event-sink)
 
