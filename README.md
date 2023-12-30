@@ -28,7 +28,7 @@
 )
 
 
-;; note : - check what you want to map in dvorak, and then use the character that is in location of that dvorak key (exact location, not the character) in QWERTY
+;; Note : - Check what you want to map in dvorak, and then use the character that is in location of that dvorak key (exact location, not the character) in QWERTY
 
 
 (defalias
