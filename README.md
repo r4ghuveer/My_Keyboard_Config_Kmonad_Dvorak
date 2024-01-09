@@ -14,7 +14,7 @@
   cmp-seq ralt    ;; Set the compose key to `RightAlt'
   cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
-  ;; For Windows : 
+  ;; For Windows
   ;; input  (low-level-hook)
   ;; output (send-event-sink)
 
@@ -30,7 +30,7 @@
 )
 
 
-;; Note : - Check what you want to map in dvorak, and then use the character that is in location of that dvorak key (exact location, not the character) in QWERTY
+;; note : - check what you want to map in dvorak, and then use the character that is in location of that Dvorak key (exact location, not the character) in QWERTY
 
 
 (defalias
@@ -101,6 +101,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _                    _
   _    _    _              _              _    _    _    _               _    _    _
 )
+
 
 
 ```
