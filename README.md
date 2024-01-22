@@ -3,7 +3,7 @@
 
 ```
 (defcfg
-  ;; For Linux
+  ;; For linux
   ;; "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
   ;;"/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd"
   input  (device-file  "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
